@@ -12,4 +12,4 @@ Most of them use the **same hotkey prefix Win+Alt** that can be easily pressed b
 
 ![Q Cheat Sheet](/Q%20Cheat%20Sheet.png)
 
-Guide and Details
+[Q Guide and Details](Q%20Guide%20and%20Details.md)
