@@ -149,7 +149,7 @@ The <b>wallet content</b> is stored <b>in the file Q.wallet</b> in the <b>encryp
 
 ## Wallet content syntax
 
-Each row should be a menu item definition. One line per item <b>lavel:value</b> where:
+Each row should be a menu item definition. One line per item <b>label:value</b> where:
   – label - is text of the menu item
   – value - any string valid for Autohotkey's Send
 
