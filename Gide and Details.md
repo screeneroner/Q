@@ -61,8 +61,10 @@ To use Q, you need the only Q.exe file. It's using Q.ini file that automatically
 
 All Q configuration stored in the file Q.ini that should be located in the same folder with Q.exe. If it's missing you may re-create it any time from the Q icon in the system tray context menu - it will create Q.ini with all features enabled and default hotkeys assignments. If yo don't need and want explicitly exclude some features you may remove its section from the Q.ini file and this feature will be completely disabled and removed from displayed help.
 
-<details><summary>Q.ini example </summary>This is an example with all features enabled and English, German, and French transliteration.
-```
+<details>
+<summary>Q.ini example</summary>
+   This is an example with all features enabled and English, German, and French transliteration.
+<pre>
 [Tools]
 Translate = <#!T
 RemoveClipboardFormatting = <#!F
@@ -101,10 +103,11 @@ ItemVisibleLength = 50
 TransliterateFirstSecond = <#!BS
 TransliterateSeconds = <#^BS
 1 = `1234567890-=qwertyuiop[]\asdfghjkl;'zxcvbnm,./~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:"ZXCVBNM<>?
-2 = ^1234567890ß´qwertzuiopü+#asdfghjklöäyxcvbnm,.-°!"§$%&/()=?`QWERTZUIOPÜ*'ASDFGHJKLÖÄYXCVBNM;:_
+2 = ^1234567890ß´qwertzuiopü+#asdfghjklöäyxcvbnm,.-°!"§$%&/()=?``QWERTZUIOPÜ*'ASDFGHJKLÖÄYXCVBNM;:_
 3 = ²&é"'(-è_çà)=azertyuiop^$*qsdfghjklmùwxcvbn,;:²!1234567890°+AZERTYUIOP¨£µQSDFGHJKLM%WXCVBN?./§
-```
-</details><details><summary>Hotkeys in Q.ini</summary>Regardless that default hot keys assignments looks reasonable, you may the other ones. To change default hot keys for more convenient for you take a look on the Autohotkey documentation page 
+</pre>
+</details>
+<details><summary>Hotkeys in Q.ini</summary>Regardless that default hot keys assignments looks reasonable, you may the other ones. To change default hot keys for more convenient for you take a look on the Autohotkey documentation page 
 https://www.autohotkey.com/docs/v1/Hotkeys.htm
 Actually, the syntax is quite simple - it's a list of the char-codes for keys and their modifiers:
 
@@ -140,33 +143,24 @@ This list is stored **in the memory only** and have no any tails on the disk. So
 Use hotkey (Win+Alt+W by default) to bring a popup menu with the wallet data. First time you use this feature, you should use the 'Edit Wallet" menu item to create your own wallet file.
 
 Here is a sample:
-```
-   Open My site:https://mysite.com/login
-   My site login:user
-   My site password:qwerty123
-   >New sub-menu with icons
-   [161]Sub-menu login:admin
-   [245]Sub-menu password:admin
-   [157]Sub-menu email:admin@company.com
-   [166]Sub-menu autologin:user{Tab}qwerty123{Tab}{Enter}
-   -
-   Item after divider:foo
-   Disabled text used like a title
-```
-that producing the following menu hierarchy:
-```
-[URL icon] Open My site
-My site login
-My site password
-New sub-menu with icons >
-    [icon161] Sub-menu login
-    [icon245] Sub-menu password
-    [icon157] Sub-menu email
-    [icon166] Sub-menu autologin
-    ------------------
-    Item after divider
-    Disabled text used like a title
-```
+<pre>
+Open My site:https://mysite.com/login
+My site login:user
+My site password:qwerty123
+>New sub-menu with icons
+[161]Sub-menu login:admin
+[245]Sub-menu password:qwerty
+[157]Sub-menu email:admin@company.com
+[166]Sub-menu autologin:user{Tab}qwerty{Tab}{Enter}
+-
+Item after divider:foo
+< returning to root menu
+Disabled text used like a title
+Google:https://google.com
+</pre>
+that producing the following menu:
+
+![Q Wallet Sample Menu](Q%20Wallet%20Sample%20Menu.png)
 
 
 ## Wallet content syntax
@@ -196,24 +190,12 @@ Usually you will be asked for the wallet password first time you will call it. T
 
 # Q Security
 
-The keyboard software is one of the most critical part in the security chain. Potentially it may have the backdoors, and keyloggers that may compromise your sensitive information. To prevent any speculations about this, I published all source code on GitHub (http://TBD!!!!). Even minimal understanding of way of writing source codes may allow you to easily verify that there are no any 'surprises' in my code, that it's doing no more than I declare, and doing exactly as described. 
+The keyboard software is one of the most critical part in the security chain. Potentially it may have the backdoors, and keyloggers that may compromise your sensitive information. To prevent any speculations about this, I published all source code on GitHub (https://github.com/screeneroner/Q). Even minimal understanding of way of writing source codes may allow you to easily verify that there are no any 'surprises' in my code, that it's doing no more than I declare, and doing exactly as described. 
 
 Exe-files I provided is built from these sources. Even if still don't trust any exe-file from external sources, you may rebuilt it from my sources by using the Autohotkey version 1 compiler as it described here - https://www.autohotkey.com/docs/v1/Scripts.htm#ahk2exe. Here is a code I'm using to build my exe-flies:
-```
+<pre>
 <PathToCompiler>\Ahk2Exe.exe /in Q.ahk /out Q.exe /icon Q.ico /bin <PathToCompiler>\Unicode 64-bit.bin /compress 2
-```
-
-
-# Warning To Users and Modders
-
-This code is free software: you can redistribute it and/or modify  it under the terms of the version 3 GNU General Public License as published by the Free Software Foundation.
-
-This code is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details (https://www.gnu.org/licenses/gpl-3.0.html)
-
-This script contains "Buy me a coffee" links to honor the author's hard work and dedication in creating all the features present in this code. Removing or altering these links not only violates the GPL license but also disregards the significant effort put into making this script valuable for the community.
-
-If you find value in this script and would like to show appreciation to the author, kindly consider visiting the site below and treating the author to a couple-triple cups of coffee here: https://www.buymeacoffee.com/screeneroner. Your honor and gratitude is greatly appreciated.
-
+</pre>
 
 # Why did I call it Q?
  1. It's the name of an almost all-powerful creature in the Star Trek universe, capable do absolutely everything in the blink of an eye, much like what you can achieve with your texts when using Q.
