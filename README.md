@@ -14,4 +14,4 @@ Most of them use the **same hotkey prefix Win+Alt** that can be easily pressed b
 
 [Q Guide and Details](Q%20Guide%20and%20Details.md)
 
-<hr><i>If you find this useful and feel it's worth treating me to a couple-triple coffee cups in recognition of my work, at any time you may do it via [https://www.buymeacoffee.com/screeneroner](☕&nbsp;Buy&nbsp;me&nbsp;a&nbsp;coffee)</i>
+<hr><sup>If you find this useful and feel it's worth treating me to a couple-triple coffee cups in recognition of my work, at any time you may do it via [☕&nbsp;Buy&nbsp;me&nbsp;a&nbsp;coffee](https://www.buymeacoffee.com/screeneroner)</sup>
