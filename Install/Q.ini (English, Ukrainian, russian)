@@ -1,0 +1,40 @@
+[Tools]
+Translate = <#!T
+RemoveClipboardFormatting = <#!F
+PastePlainText = <#+Ins
+Stamps = <#!S
+
+[Mouse]
+NumpadMouse    = Yes
+Multimedia     = Yes
+MinDobleClickInterval = 350
+
+[Case]
+Upper  = <#!U
+Lower  = <#!L
+Invert = <#!I
+Camel  = <#!C
+
+[Color]
+ShowHTML = <#LButton
+ShowRGB  = <#!LButton
+CopyHTML = <#^LButton
+CopyRGB  = <#^!LButton
+Paste    = <#^Ins
+
+[Wallet]
+Show   = <#!W
+Lock   = <#!Q
+
+[Clipboard]
+Show = <#!Down
+Colunms = 3
+ItemsInColunm = 30
+ItemVisibleLength = 50
+
+[Transliterating]
+TransliterateFirstSecond = <#!BS
+TransliterateSeconds = <#^BS
+1 = `1234567890-=qwertyuiop[]\asdfghjkl;'zxcvbnm,./~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:"ZXCVBNM<>?
+2 = ё1234567890-=йцукенгшщзхъ\фывапролджэячсмитьбю.Ё!"№;%:?*()_+ЙЦУКЕНГШЩЗХЪ/ФЫВАПРОЛДЖЭЯЧСМИТЬБЮ,
+3 = ё1234567890-=йцукенгшщзхї\фівапролджєячсмитьбю.Ё!"№;%:?*()_+ЙЦУКЕНГШЩЗХЇ/ФІВАПРОЛДЖЄЯЧСМІТЬБЮ,
