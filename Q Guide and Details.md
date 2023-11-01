@@ -136,13 +136,35 @@ Selecting some menu item will invoke inserting text, which header was clicked.
 If, by an accident, you copied some text that should not be exposed in this menu, just select it with the **Shift** key pressed down, and selected item will be removed from the list.
 
 This list is stored **in the memory only** and have no any tails on the disk. So, each time you (re)start Q, the clipboard history will be empty.
-
 </details>
+
 # Credentials Wallet
 
 Use hotkey (Win+Alt+W by default) to bring a popup menu with the wallet data. First time you use this feature, you should use the 'Edit Wallet" menu item to create your own wallet file.
 
-Here is a sample:
+The **wallet content** is stored **in the file Q.wallet** in the **encrypted** form. First time you create or open it, you will be asked for the password to encrypt the wallet content. The shifted xor algorithm is used for encrypting. It's NOT a real encrypting! It's just the text 'hider', good enough to prevent the peeking of your passwords by somebody behind of your shoulders.
+
+> WARNING: The wallet password is stored **in memory only** and **nowhere on the disk**. 
+> There is **no any way to restore it** if you forgot it!
+
+## Wallet content syntax
+
+Each row should be a menu item definition. One line per item **lavel:value** where:
+  – label - is text of the menu item
+  – value - any string valid for Autohotkey's Send
+
+If value starting with 'http', it's treated as a web address to be opened in browser. 
+
+You may also start item with: 
+  – '>' to start sub-menu
+  – '-' to create divider
+
+If label starting with the digit enclosed in [] this number will be treated as an icon number from the system library system32.dll and displayed in front of the label text.
+
+Items without ':' are shown as a disabled menu items and may be used as a some kind of the title inside menu.
+
+## Wallet Sample
+
 <pre>
 Open My site:https://mysite.com/login
 My site login:user
@@ -161,28 +183,6 @@ Google:https://google.com
 that producing the following menu:
 
 ![Q Wallet Sample Menu](Q%20Wallet%20Sample%20Menu.png)
-
-
-## Wallet content syntax
-
-The **wallet content** is stored **in the file Q.wallet** in the **encrypted** form. First time you create or open it, you will be asked for the password to encrypt the wallet content. The shifted xor algorithm is used for encrypting. It's NOT a real encrypting! It's just the text 'hider', good enough to prevent the peeking of your passwords by somebody behind of your shoulders.
-
-> WARNING: The wallet password is stored **in memory only** and **nowhere on the disk**. 
-> There is **no any way to restore it** if you forgot it!
-
-Each row should be a menu item definition. One line per item **lavel:value** where:
-  – label - is text of the menu item
-  – value - any string valid for Autohotkey's Send
-
-If value starting with 'http', it's treated as a web address to be opened in browser. 
-
-You may also start item with: 
-  – '>' to start sub-menu
-  – '-' to create divider
-
-If label starting with the digit enclosed in [] this number will be treated as an icon number from the system library system32.dll and displayed in front of the label text.
-
-Items without ':' are shown as a disabled menu item	
 
 ## Wallet password verification and resetting
 
