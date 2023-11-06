@@ -166,6 +166,7 @@ SetLanguage(id) {
     NumPut(targetLCID, Lan%targetLCID%) 
     DllCall("SystemParametersInfo", "UInt", 0x005A, "UInt", 0, "UPtr", &Lan%targetLCID%, "UInt", 2)
     
+    /* THIS MAY BE HELPFUL IN SOME CASES, HOWEVER, IT ALSO MAY RAISE SOME ISSUES, SO - THIS PART IS COMMENTED!
     ; last attempt - send system language switching hotkey
     if (GetActiveWindowLanguage().id != id) { 
         ; 5) Send buitin languages swithcing hotkeys Win+Space   
@@ -179,6 +180,7 @@ SetLanguage(id) {
                 break
         }
     }
+    */
     ShowLanguageToolTip()
 }
 
