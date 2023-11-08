@@ -190,7 +190,7 @@ Usually you will be asked for the wallet password first time you will call it. T
 
 # Q Security
 
-The keyboard software is one of the most critical part in the security chain. Potentially it may have the backdoors, and keyloggers that may compromise your sensitive information. To prevent any speculations about this, I published all source code on GitHub (https://github.com/screeneroner/Q). Even minimal understanding of way of writing source codes may allow you to easily verify that there are no any 'surprises' in my code, that it's doing no more than I declare, and doing exactly as described. 
+The keyboard software is one of the most critical parts of the security chain. Potentially, it may have backdoors, and keyloggers that may compromise your sensitive information. To prevent any speculations about this, I published all the source code on GitHub (https://github.com/screeneroner/Q). Even a minimal understanding of a way of writing source codes may allow you to quickly verify that there are no any 'surprises' in my code, that it's doing no more than I declare, and doing exactly as described.
 
 Exe-files I provided is built from these sources. Even if still don't trust any exe-file from external sources, you may rebuilt it from my sources by using the Autohotkey version 1 compiler as it described here - https://www.autohotkey.com/docs/v1/Scripts.htm#ahk2exe. Here is a code I'm using to build my exe-flies:
 <pre>
