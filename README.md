@@ -16,8 +16,8 @@ Most of them use the **same hotkey prefix Win+Alt** that can be easily pressed b
 
 # How to install and use Q
 
-Q doesn't require any specific installation - it's complettely portable. Just download the fresshest version from the [Install folder](Install), unzip Q.exe to any desired location and run it - in the system tray you will see the right clickable Q icon. 
+Q doesn't require any specific installation - it's completely portable. Just download the freshest version from the [Install folder](Install), unzip Q.exe to any desired location, and run it - in the system tray, you will see the right-clickable Q icon.
 
-If you want to launch Q on every system boot, right click the Q icon in the system tray and check the Autostart menu item.
+If you want to launch Q on every system boot, right-click the Q icon in the system tray and check the Autostart menu item.
 
 <hr><sup><i>If you find this useful and feel it's worth treating me to a couple-triple coffee cups in recognition of my work, at any time you may do it via </i><a href="https://www.buymeacoffee.com/screeneroner">☕&nbsp;Buy&nbsp;me&nbsp;a&nbsp;coffee</a></sup>
