@@ -201,7 +201,7 @@ SetLanguage(1) ; alway start from First Language
 ;----------------------------------------------------------------------------------------------------------------------
 ; INITIAL SETUP OF THE TRAY MENU
 ;----------------------------------------------------------------------------------------------------------------------
-version := "v2.05  by Screeneroner"
+version := "v2.06  by Screeneroner"
 Menu, Tray, NoStandard ; Remove the standard menu items
 ;Menu, Tray, Icon, Q.ico
 Menu, Tray, Tip, Q %version%

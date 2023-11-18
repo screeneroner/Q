@@ -150,13 +150,13 @@ SetLanguage(id) {
     DetectHiddenWindows, On
     WinExist("A")
     ControlGetFocus, CtrlInFocus
-    SendMessage, 0x50, 0, %Lan%, %CtrlInFocus%
-    SendMessage, 0x51, 0, %Lan%, %CtrlInFocus%
+    PostMessage, 0x50, 0, %Lan%, %CtrlInFocus%
+    PostMessage, 0x51, 0, %Lan%, %CtrlInFocus%
 
     ; 2) Send language switch messages to the active window
     WinGet, activeWindow, IDLast, A
-    SendMessage 0x50, 0, %Lan%, , % "ahk_id " activeWindow ; Request to change input language in window
-    SendMessage 0x51, 0, %Lan%, , % "ahk_id " activeWindow ; Signal that input language was changed
+    PostMessage 0x50, 0, %Lan%, , % "ahk_id " activeWindow ; Request to change input language in window
+    PostMessage 0x51, 0, %Lan%, , % "ahk_id " activeWindow ; Signal that input language was changed
 
     ; 3) Send language switch messages to the entire system
     DllCall("ActivateKeyboardLayout", "UInt", Lan, "UInt", 0)
@@ -165,8 +165,16 @@ SetLanguage(id) {
     VarSetCapacity(Lan%targetLCID%, 4, 0)
     NumPut(targetLCID, Lan%targetLCID%) 
     DllCall("SystemParametersInfo", "UInt", 0x005A, "UInt", 0, "UPtr", &Lan%targetLCID%, "UInt", 2)
-    
-    /* THIS MAY BE HELPFUL IN SOME CASES, HOWEVER, IT ALSO MAY RAISE SOME ISSUES, SO - THIS PART IS COMMENTED!
+
+	WinGet, windows, List
+	Loop %windows% {
+        if (A_Index > 50) ; preventing deadloops 
+            break 
+        PostMessage 0x50, 0, %Lan%, , % "ahk_id " windows%A_Index%
+        PostMessage 0x51, 0, %Lan%, , % "ahk_id " windows%A_Index%
+    }
+        
+    ;/* THIS MAY BE HELPFUL IN SOME CASES, HOWEVER, IT ALSO MAY RAISE SOME ISSUES, SO - THIS PART IS COMMENTED!
     ; last attempt - send system language switching hotkey
     if (GetActiveWindowLanguage().id != id) { 
         ; 5) Send buitin languages swithcing hotkeys Win+Space   
@@ -180,7 +188,7 @@ SetLanguage(id) {
                 break
         }
     }
-    */
+    ;*/
     ShowLanguageToolTip()
 }
 
