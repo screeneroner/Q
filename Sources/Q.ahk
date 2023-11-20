@@ -201,7 +201,11 @@ SetLanguage(1) ; alway start from First Language
 ;----------------------------------------------------------------------------------------------------------------------
 ; INITIAL SETUP OF THE TRAY MENU
 ;----------------------------------------------------------------------------------------------------------------------
-version := "v2.06  by Screeneroner"
+; 2.04 - initial release
+; 2.05 - stability improvements
+; 2.06 - switched to PostMessage to prevent hanging on sending messages
+; 2.07 - added resteart tray menu item to quickly REinit wallet menu if previously was entered wrong password and you see very looooong menu
+version := "v2.07  by Screeneroner"
 Menu, Tray, NoStandard ; Remove the standard menu items
 ;Menu, Tray, Icon, Q.ico
 Menu, Tray, Tip, Q %version%
@@ -241,9 +245,15 @@ Menu, Tray, Add, Help, ShowHelp
 Menu, Tray, Icon, Help, %SystemRoot%\System32\shell32.dll,155
 Menu, Tray, Add, Buy me a coffee, BuyCoffee 
 Menu, Tray, Add
+Menu, Tray, Add, Restart Q, RestartScript
 Menu, Tray, Add, Exit, ExitScript 
 Menu, Tray, Default, Buy me a coffee
 Menu, Tray, Icon, Buy me a coffee, %SystemRoot%\System32\shell32.dll,44
+
+RestartScript() {
+    ThisScriptPath := A_ScriptFullPath
+    Run, %ThisScriptPath%
+}
 
 ; ShowHelp() 
 
