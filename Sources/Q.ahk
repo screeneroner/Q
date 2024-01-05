@@ -1,4 +1,4 @@
-;----------------------------------------------------------------------------------------------------------------------
+﻿;----------------------------------------------------------------------------------------------------------------------
 ; This code is free software: you can redistribute it and/or modify  it under the terms of the 
 ; version 3 GNU General Public License as published by the Free Software Foundation.
 ; 
@@ -205,7 +205,8 @@ SetLanguage(1) ; alway start from First Language
 ; 2.05 - stability improvements
 ; 2.06 - switched to PostMessage to prevent hanging on sending messages
 ; 2.07 - added resteart tray menu item to quickly REinit wallet menu if previously was entered wrong password and you see very looooong menu
-version := "v2.07  by Screeneroner"
+; 2.08 - fixed UTF-8 typos in help and guides
+version := "v2.08  by Screeneroner"
 Menu, Tray, NoStandard ; Remove the standard menu items
 ;Menu, Tray, Icon, Q.ico
 Menu, Tray, Tip, Q %version%

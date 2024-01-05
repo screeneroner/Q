@@ -1,4 +1,4 @@
-;----------------------------------------------------------------------------------------------------------------------
+﻿;----------------------------------------------------------------------------------------------------------------------
 ; This code is free software: you can redistribute it and/or modify  it under the terms of the 
 ; version 3 GNU General Public License as published by the Free Software Foundation.
 ; 
@@ -105,7 +105,7 @@ ShowGuide() {
 (
 Use following syntax to create an item:
 
-   lavel:value
+   label:value
 
 where:
    – label - is text of the menu item
@@ -123,7 +123,7 @@ Start line with:
 
 If label starting with the digit enclosed in [] 
 this number will be treated as an icon number 
-from the system library system32.dll 
+from the system library shell32.dll 
 and displayed in front of the label text.
 
 WARNING: ALL LABELS MUST BE UNIQUE!
@@ -145,7 +145,7 @@ EXAMPLE:
    Google:https://google.com
 
 )
-	MsgBox, 64, Wallet Sytax Guide, %guide%
+	MsgBox, 64, Wallet Syntax Guide, %guide%
 }
 
 GuiSize()
@@ -232,8 +232,8 @@ ShowPasswordsMenu()
 	}
 
     Variants := "root"
-
-    Menu, %Variants%, Add, Foo, InsertSelectedPassword
+	
+    Menu, %Variants%, Add
     Menu, %Variants%, DeleteAll
 
     ; Create an object to store pairs of label and value
