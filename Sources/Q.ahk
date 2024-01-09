@@ -206,7 +206,8 @@ SetLanguage(1) ; alway start from First Language
 ; 2.06 - switched to PostMessage to prevent hanging on sending messages
 ; 2.07 - added resteart tray menu item to quickly REinit wallet menu if previously was entered wrong password and you see very looooong menu
 ; 2.08 - fixed UTF-8 typos in help and guides
-version := "v2.08  by Screeneroner"
+; 2.09 - fixed nonswitching in the Teams
+version := "v2.09  by Screeneroner"
 Menu, Tray, NoStandard ; Remove the standard menu items
 ;Menu, Tray, Icon, Q.ico
 Menu, Tray, Tip, Q %version%

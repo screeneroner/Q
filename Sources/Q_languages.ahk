@@ -140,7 +140,9 @@ SetLanguage(id) {
 
     ; Retrieve the LCID for the current and target locale
     initialLCID := GetActiveWindowLanguage().LCID    
+	initial_id := GetActiveWindowLanguage().id
     targetLCID := lng[id].LCID
+    target_id := id
 
     ; Load the new keyboard layout associated with the target locale
     Lan := DllCall("LoadKeyboardLayout", "Str", Format("{:08x}", targetLCID), "Int", 0)
@@ -165,17 +167,18 @@ SetLanguage(id) {
     VarSetCapacity(Lan%targetLCID%, 4, 0)
     NumPut(targetLCID, Lan%targetLCID%) 
     DllCall("SystemParametersInfo", "UInt", 0x005A, "UInt", 0, "UPtr", &Lan%targetLCID%, "UInt", 2)
-
+    
+    ; 5000 - WORKAROUND FOR SOME SPECIFICALLY PARTICULAR CASE IN TEAMS APPLICATION ((((
 	WinGet, windows, List
 	Loop %windows% {
-        if (A_Index > 50) ; preventing deadloops 
+        if (A_Index > 5000) ; preventing deadloops 
             break 
         PostMessage 0x50, 0, %Lan%, , % "ahk_id " windows%A_Index%
         PostMessage 0x51, 0, %Lan%, , % "ahk_id " windows%A_Index%
     }
         
     ;/* THIS MAY BE HELPFUL IN SOME CASES, HOWEVER, IT ALSO MAY RAISE SOME ISSUES, SO - THIS PART IS COMMENTED!
-    ; last attempt - send system language switching hotkey
+    ; last attempt - send system language switching hotkey    
     if (GetActiveWindowLanguage().id != id) { 
         ; 5) Send buitin languages swithcing hotkeys Win+Space   
         switchKey := "{LWin Down}{Space}{LWin UP}" 
